@@ -1,0 +1,7 @@
+streamlit
+mysql.connector
+cursor
+execute
+cloudinary
+api_key = [ ]
+api_secert =[ ]
