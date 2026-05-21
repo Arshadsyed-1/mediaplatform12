@@ -74,11 +74,14 @@ def signup():
 
 
         if button:
-            query="insert into users(name,email,password) values(%s,%s,%s)"
-            values=(name,email,password)
-            cursor_obj.execute(query,values)
-            conn_obj.commit()
-            st.write("user added successfully ")
+            try:
+                query="insert into users(name,email,password) values(%s,%s,%s)"
+                values=(name,email,password)
+                cursor_obj.execute(query,values)
+                conn_obj.commit()
+                st.write("user added successfully ")
+            except Exception as e:
+                st.error(e)
 
 if st.session_state.user == None:
     login,signup = st.tabs(
