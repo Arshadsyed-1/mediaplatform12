@@ -24,7 +24,7 @@ def dashboard():
         st.header("upload yr files here")
         choosedFile=st.file_uploader("choose file",type=["pdf","jpg","jpeg","png","mp3","mp4"]) 
 
-        if choosedFile:
+        if choosedFile is not None:
             st.write(choosedFile.name)
             st.write(choosedFile.type)
 
