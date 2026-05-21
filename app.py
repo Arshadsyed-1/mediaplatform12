@@ -56,8 +56,8 @@ def login():
         if button:
             query = "select*from users where email = %s and password = %s"
             values = (email,password)
-            cursor.execute(query,values)
-            logged_in_user = cursor.fetchone()
+            cursor_obj.execute(query,values)
+            logged_in_user = cursor_obj.fetchone()
 
             st.session_state.user = logged_in_user
             st.write("Logged in successfully")
@@ -76,8 +76,8 @@ def signup():
         if button:
             query="insert into users(name,email,password) values(%s,%s,%s)"
             values=(name,email,password)
-            cursor.execute(query,values)
-            conn.commit()
+            cursor_obj.execute(query,values)
+            conn_obj.commit()
             st.write("user added successfully ")
 
 if st.session_state.user == None:
