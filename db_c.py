@@ -1,15 +1,15 @@
 import mysql.connector
 import streamlit as st
-conn = mysql.connector.connect(
+conn_obj= mysql.connector.connect(
     host = st.secrets["host"],
     user = st.secrets["user"],
     port = st.secrets["port"],
     password = st.secrets["password"],
     database = st.secrets["database"]
 )
-cursor = conn.cursor()
+cursor_obj = conn_obj.cursor()
 
-cursor.execute(""" 
+cursor_obj.execute(""" 
                create table if not exists users (
                    id INT AUTO_INCREMENT PRIMARY KEY,
                    name VARCHAR(255) ,
@@ -18,7 +18,7 @@ cursor.execute("""
                )
                """)
 
-cursor.execute("""
+cursor_obj.execute("""
                  create table if not exists files (
                       id int auto_increment primary key,
                       user_id int,
@@ -30,5 +30,5 @@ cursor.execute("""
                  )
                  """)
 
-conn.commit()
+conn_obj.commit()
 print("Tables created successfully")
