@@ -1,8 +1,2 @@
 streamlit
-conn_obj
-cursor_obj
-mysql-connector-python  
-Cloud name
-API Key
-API Secret
-cloudinary
+mysql-connector-python
