@@ -5,3 +5,6 @@ execute
 cloudinary
 api_key = [ ]
 api_secert =[ ]
+streamlit
+mysql-connector-python
+pandas
