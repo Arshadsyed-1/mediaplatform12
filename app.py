@@ -84,13 +84,13 @@ def signup():
                 st.error(e)
 
 if st.session_state.user == None:
-    login,signup = st.tabs(
+    login_tab,signup_tab = st.tabs(
     ["Login","SignUp"]
     )
-    with signup:
+    with signup_tab:
         signup()
 
-    with login:
+    with login_tab:
         login()    
 else:
     dashboard()
