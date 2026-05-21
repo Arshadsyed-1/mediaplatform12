@@ -21,7 +21,7 @@ def dashboard():
     st.header("dashboard")  
 
     if opt == "uploadFiles":
-        st.header("upload yr files here")
+        st.header("upload your files here")
         choosedFile=st.file_uploader("choose file",type=["pdf","jpg","jpeg","png","mp3","mp4"]) 
 
         if choosedFile is not None:
